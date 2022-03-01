@@ -20,7 +20,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
 #Inicio Nueva Linea proyectos
-      - ${PWD}/elinformador:/var/www/html/wp-content/themes/elinformador #Tema ya creado solo lo cargo para verificar
+      - ${PWD}/elinformador:/var/www/html/wp-content/themes/elinformador #Tema ya creado solo lo cargo para verificar funcionamiento
       - ${PWD}/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
 #Fin Nueva Linea proyectos
     ports:
