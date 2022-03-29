@@ -4,7 +4,11 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql #Funciona Bien
+      #- ./mysql_data:/var/lib/mysql #Funciona pero no guarda datos fuera del contenedor
+      #- './mysql_data:/var/lib/mysql' #Probando Almacenamiento
+      #- ${PWD}/db:/var/lib/mysql
+      #- ${PWD}/mysql:/var/lib/mysql
       #- ${PWD}/db.db:/var/lib/mysql
     restart: always
     environment:
@@ -20,8 +24,8 @@ services:
     volumes:
       - wordpress_data:/var/www/html
 #Inicio Nueva Linea proyectos
-      - ${PWD}/elinformador:/var/www/html/wp-content/themes/elinformador #Tema ya creado solo lo cargo para verificar funcionamiento
-      - ${PWD}/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
+      - ${PWD}/temas/elinformador:/var/www/html/wp-content/themes/elinformador #Tema ya creado solo lo cargo para verificar funcionamiento
+      - ${PWD}/temas/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
 #Fin Nueva Linea proyectos
     ports:
       - "8000:80"
